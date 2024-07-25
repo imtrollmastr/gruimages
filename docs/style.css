@@ -1,0 +1,204 @@
+@font-face {
+    font-family: GothamBold;
+    src: url(GothamBold.ttf);
+    font-weight: bold;
+}
+
+body {
+    background-color: #0f0f0f;
+    color: #fff;
+    font-family: GothamBold;
+    margin: 0;
+    padding: 12px 4% 12px 4%;
+}
+
+/* textbox */
+input[type="text"], input[type="number"] {
+    width: 100%;
+    height: 3rem;
+    padding: 12px;
+    font-size: 1.5rem;
+    margin-bottom: 32px;
+    box-sizing: border-box;
+    border: 2px solid #333;
+    border-radius: 4px;
+    background-color: #202020;
+    color: #fff;
+}
+input[type="text"]:focus, input[type="number"]:focus {
+    border: 2px solid #33aeff;
+}
+
+button {
+    padding: 12px;
+    font-size: 1.5rem;
+    background-color: #000;
+    color: #eee;
+    border: none;
+    cursor: default;
+    transition: all 0.08s linear;
+}
+button:hover {
+    background-color: #333;
+}
+
+#face {
+    position: absolute;
+    width: 130px;
+    opacity: .01;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 34px;
+    aspect-ratio: 1/1;
+    transition: all 4s ease;
+}
+#face:hover {
+    opacity: .1;
+    width: 140px;
+    padding-bottom: 28px;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 12px);
+    padding-bottom: 12px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+}
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+}
+.controls {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    padding: 16px;
+    height: 100%;
+}
+.controls a {
+    padding: .6em 18px;
+    font-size: 1.3rem;
+    background-color: #000;
+    color: #eee;
+    text-decoration: none;
+    border: none;
+    cursor: default;
+    transition: all 0.08s linear;
+}
+.controls a:hover {
+    background-color: #333;
+}
+
+a {
+    color: #33aeff;
+    text-decoration: none;
+}
+
+/* social button */
+#social {
+    background-color: #202020;
+    color: #fff;
+    fill: #fff;
+    border: 1px solid rgb(107, 128, 126);
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.1s linear;
+}
+#social:hover {
+    background-color: #e4e4e4;
+    color: #000;
+    fill: #000;
+}
+#social > svg {
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: all 0.08s linear;
+}
+
+#embed {
+    border: 0;
+    border-radius: 12px;
+    width: 100%;
+    height: 240px;
+    margin: 0;
+    padding: 0;
+}
+
+.socials {
+    display: flex;
+    /* grid like */
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-content: center;
+    align-items: baseline;
+    height: 100%;
+}
+
+.embeds {
+    width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: right;
+    padding: 12px;
+    height: fit-content;
+}
+
+.game-embed {
+    margin-top: 24px;
+    background-color: #00000044;
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+}
+.game-icon {
+    min-width: 10.7rem;
+    width: 10.7rem;
+    height: 6rem;
+    margin-left: .55rem;
+    margin-right: 12px;
+    background-color: #00000088;
+    background-size: cover;
+}
+.game-info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-right: 4rem;
+}
+#game-name {
+    margin-top: .4rem;
+    margin-bottom: .2rem;
+}
+#game-description {
+    overflow: hidden;
+    margin: 0px;
+    text-wrap: wrap;
+    text-overflow: ellipsis;
+    opacity: .4;
+    white-space: wrap;
+}
+
+@media screen and (max-width: 571px) {
+    #image-header {
+        width: 96px;
+    }
+    
+}
