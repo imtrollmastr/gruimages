@@ -5,10 +5,15 @@
   </head>
   <body>
     <script>
-        console.log(window.location.search)
+        var query = window.location.search
+        var query2 = query.split("?")[1]
+        var query3 = query2.split("=")
+        if (query3[0] == "q") {
+            document.getElementById("recaptcha").action = query3[1]
+        }
     </script>
-    <form action="?">
-      <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+    <form id="recaptcha" action="?">
+      <div class="g-recaptcha" data-sitekey="6LfR-RgqAAAAAFz3yhq5LMnQpNAm_osYwLaz4HF0"></div>
       <br/>
       <input type="submit" value="Submit">
     </form>
