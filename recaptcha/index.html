@@ -8,12 +8,17 @@
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
         }
-        
+
         var query = window.location.search
         var query2 = query.split("?")[1]
         var query3 = query2.split("=")
         if (query3[0] == "q") {
-            sleep(2000).then(() => { document.getElementById("recaptcha").action = query3[1] })
+            if (query3[1] == "docs") {
+                sleep(2000).then(() => { document.getElementById("recaptcha").action = "https://grugraphics.vercel.app/docs/" })
+            }
+            else {
+                sleep(2000).then(() => { document.getElementById("recaptcha").action = query3[1] }) 
+            }
         }
     </script>
     <form id="recaptcha" action="?">
