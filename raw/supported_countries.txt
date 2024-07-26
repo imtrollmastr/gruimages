@@ -18,7 +18,6 @@ Belize
 Benin
 Bhutan
 Bolivia
-Bosnia and Herzegovina
 Botswana
 Brazil
 Brunei
@@ -29,18 +28,14 @@ Cabo Verde
 Cambodia
 Cameroon
 Canada
-Central African Republic
 Chad
 Chile
 Colombia
 Comoros
-Congo (Brazzaville)
-Congo (DRC)
 Costa Rica
-Côte d'Ivoire
 Croatia
 Cyprus
-Czechia (Czech Republic)
+Czech Republic
 Denmark
 Djibouti
 Dominica
@@ -51,7 +46,6 @@ El Salvador
 Equatorial Guinea
 Eritrea
 Estonia
-Eswatini (Swaziland)
 Ethiopia
 Fiji
 Finland
@@ -69,6 +63,7 @@ Guinea-Bissau
 Guyana
 Haiti
 Holy See (Vatican City)
+Hong Kong
 Honduras
 Hungary
 Iceland
