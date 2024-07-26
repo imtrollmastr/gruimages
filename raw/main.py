@@ -2,7 +2,7 @@ import os
 import sys
 import base64
 
-print("Welcome to GRU.")
+print("Welcome to GRU Graphics")
 
 # read configuration files
 with open("config/username.config", "rb") as username_file:

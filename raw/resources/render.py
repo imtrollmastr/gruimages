@@ -63,7 +63,7 @@ if __name__ == "__main__":
 
     pygame.init()
     window = pygame.display.set_mode((width, height))
-    pygame.display.set_caption('Gru Image Viewer')
+    pygame.display.set_caption('GRU Image Viewer')
 
     running = True
     while running:

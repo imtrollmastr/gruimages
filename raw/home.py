@@ -1,4 +1,4 @@
-print("GRU image panel has successfully loaded.")
+print("GRU Graphics Panel has successfully loaded.")
 
 import os
 import sys
