@@ -39,6 +39,7 @@
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4) {
                 if (xhr.status == 200) {
+                    r = xhr.responseText.replace("short_url", "url")
                     p.innerHTML = xhr.responseText
                 } else {
                     console.error(`HTTP error! Status: ${xhr.status}`);
