@@ -49,6 +49,21 @@
 
         xhr.send(data);
         }
+
+        function getSocialLinks(q) {
+            var twitter = "https://twitter.com/intent/tweet?url=" + q
+            var facebook = "https://www.facebook.com/sharer/sharer.php?u=" + q
+            var telegram = "https://t.me/share/url?url=" + q
+            var whatsapp = "https://api.whatsapp.com/send?text=" + q
+            var reddit = "https://www.reddit.com/submit?url=" + q
+            var snapchat = "https://snapchat.com/scan?attachmentUrl=" + q
+            document.write("<a href='" + twitter + "'>Twitter</a>")
+            document.write("<a href='" + facebook + "'>Facebook</a>")
+            document.write("<a href='" + telegram + "'>Telegram</a>")
+            document.write("<a href='" + whatsapp + "'>WhatsApp</a>")
+            document.write("<a href='" + reddit + "'>Reddit</a>")
+            document.write("<a href='" + snapchat + "'>Snapchat</a>")
+        }
     </script>
   </head>
   <body>
@@ -59,9 +74,9 @@
     </section>
     <img src="https://grugraphics.vercel.app/cdn/1x1.png" width="3">
     <p>Select a .gru file to get a link.</p>
-    <form action="https://grugraphics.vercel.app/share/" method="POST">
+    <form>
         <input type="url" id="postfile" required>
-        <button id="postbutton" type="submit">Post file</button>
+        <button id="postbutton" onclick="getSocialLinks(document.getElementById('postfile').innerText)" type="submit">Post file</button>
     </form>
     <p>Copyright (c) 2024 imtrollmastr [v6.1.7-alpha]</p>
   </body>
