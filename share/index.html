@@ -57,6 +57,7 @@
             var whatsapp = "https://api.whatsapp.com/send?text=" + q
             var reddit = "https://www.reddit.com/submit?url=" + q
             var snapchat = "https://snapchat.com/scan?attachmentUrl=" + q
+            document.write("<h3>GRU Sharing Platform</h3>")
             document.write("<div><a href='" + twitter + "'>Twitter</a></div>")
             document.write("<div><a href='" + facebook + "'>Facebook</a></div>")
             document.write("<div><a href='" + telegram + "'>Telegram</a></div>")
@@ -67,12 +68,10 @@
     </script>
   </head>
   <body>
-    <h3>GRU Sharing Platform</h3>
     <section>
         <button onclick="upload()">Upload a file</button>
         <p id="par">No file selected.</p>
     </section>
-    <img src="https://grugraphics.vercel.app/cdn/1x1.png" width="3">
     <p>Select a .gru file to get a link.</p>
     <form>
         <input type="url" id="postfile" required>
