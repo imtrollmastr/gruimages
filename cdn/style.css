@@ -27,3 +27,7 @@ font-display:swap;font-style:normal;font-weight:400;font-stretch:normal;
 }
 
 .tk-proxima-nova { font-family: "proxima-nova",sans-serif; }
+
+p, h3, button {
+    font-family: "proxima-nova", sans-serif;
+}
