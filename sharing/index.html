@@ -15,7 +15,7 @@
           const fileUrls = files.map(x => x.fileUrl).join("\n");
           const success = fileUrls.length === 0
             ? "No file selected."
-            : urlP.innerHTML = fileUrls
+            : urlP.innerHTML = $(fileUrls)
           alert(success);
         },
         error => {
