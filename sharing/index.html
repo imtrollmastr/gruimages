@@ -2,21 +2,25 @@
   <head>
     <script src="https://js.bytescale.com/upload-widget/v4"></script>
     <script>
-
+      // -----
+      // Configuration:
+      // https://www.bytescale.com/docs/upload-widget#configuration
+      // -----
       const options = {
-        apiKey: "public_FW25c9NhWKQ2sboH2hhMf8eXQd4j",
+        apiKey: "public_FW25c9NhWKQ2sboH2hhMf8eXQd4j", // This is your API key.
         maxFileCount: 1
       };
-      
-      const urlP = document.getElementById("url")
 
+      const p = document.getElementById("")
+
+      // import * as Bytescale from "@bytescale/upload-widget";
       Bytescale.UploadWidget.open(options).then(
         files => {
           const fileUrls = files.map(x => x.fileUrl).join("\n");
           const success = fileUrls.length === 0
             ? "No file selected."
-            : urlP.innerHTML = `${fileUrls}`;
-          alert(success);
+            : `${fileUrls}`;
+          p.innerHTML = success;
         },
         error => {
           alert(error);
@@ -25,6 +29,6 @@
     </script>
   </head>
   <body>
-    <p id="url">URL: Upload a file first.</p>
+    <p id="p"></p>
   </body>
 </html>
