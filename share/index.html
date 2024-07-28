@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <script src="https://js.bytescale.com/upload-widget/v4"></script>
+    <script src="https://axorax.github.io/urlmskr/lib.js"></script>
+    <script>
+        const options = {
+            apiKey: "public_FW25c9NhWKQ2sboH2hhMf8eXQd4j",
+            maxFileCount: 1
+        };
+        function upload() {
+            Bytescale.UploadWidget.open(options).then(
+                files => {
+                const p = document.getElementById("par")
+                const fileUrls = files.map(x => x.fileUrl).join("\n");
+                const success = fileUrls.length === 0
+                    ? "No file selected."
+                    : `${fileUrls}`;
+                p.innerHTML = success;
+                getNewUrl()
+                },
+                error => {
+                alert(error);
+                }
+            );
+        }
+        function getNewUrl() {
+        const p = document.getElementById("par")
+        const url = 'https://spoo.me/';
+        const data = new URLSearchParams();
+        data.append('url', p.innerHTML);
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.setRequestHeader('Accept', 'application/json');
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    p.innerHTML = xhr.responseText
+                } else {
+                    console.error(`HTTP error! Status: ${xhr.status}`);
+                }
+            }
+        };
+
+        xhr.send(data);
+        }
+    </script>
+  </head>
+  <body>
+    <h3>GRU Sharing Platform</h3>
+    <button onclick="upload()">Upload a file</button>
+    <p id="par">Select a .gru file to get a link.</p>
+    <form action="https://grugraphics.vercel.app/share/" method="POST">
+        <input type="url" id="postfile" required>
+        <button id="postbutton" type="submit">Post file</button>
+    </form>
+  </body>
+</html>
