@@ -4,6 +4,16 @@
         <script src="https://axorax.github.io/urlmskr/lib.js"></script>
         <script src="https://grugraphics.vercel.app/cdn/share-profile.js"></script>
         <link rel="stylesheet" href="https://grugraphics.vercel.app/cdn/style.css">
+        <script>
+            const u = document.getElementById("u")
+            var query = window.location.search
+            var query1 = query.split("?")[1]
+            var identifier = query1.split("=")[0]
+            var query2 = query1.split(identifier + "=")[1]
+            if (identifier == "u") {                
+                u.innerHTML = "Selected user: " + query2
+            }
+        </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
     </head>
     <body>
