@@ -7,8 +7,16 @@
             var query2 = query1.split(identifier + "=")[1]
             console.log(identifier)
             console.log(query2)
-            if (identifier == "user") {
+            if (identifier == "email") {
                 document.write("<h3>" + query2 + "</h3>")
+                document.addEventListener( 'DOMContentLoaded', () => {
+                    // Step 1: Hash your email address using SHA-256.
+                    const hashedEmail = CryptoJS.SHA256(query2);
+                    // Step 2: Construct the Gravatar URL.
+                    const gravatarUrl = `https://www.gravatar.com/avatar/${hashedEmail}`;
+                    // Step 3: Set the image source to the Gravatar URL.
+                    document.write("<img src='" + gravatarUrl + "' width=300 height=300>")
+                } );
             }
         </script>
     </head>
