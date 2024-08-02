@@ -1,5 +1,6 @@
 import subprocess
 import requests
+import webbrowser
 def check_internet_connection():
    try:
       subprocess.check_output(["ping", "-c", "1", "8.8.8.8"])
@@ -52,6 +53,9 @@ print("Welcome, " + username + ".")
 print("1) Convert .png to .gru")
 print("2) Display .gru image")
 print("3) Convert .gru to .png")
+print("4) Join GRU Members")
+print("5) Enter GRU Member ID")
+print("6) View Rewards")
 def askForCommand():
     command = input("> ")
     if command == "1":
@@ -66,6 +70,36 @@ def askForCommand():
         os.system("python3 resources/render.py " + renderFile)
     elif command == "3":
         print("We do not support decompiling yet.")
+    elif command == "4":
+        print("Enter a username: ")
+        command = input("> ")
+        webbrowser.open_new_tab("https://grugraphics.vercel.app/profile?u=" + command)
+    elif command == "5":
+        print("Enter your GRU Member ID:")
+        memberID = input("> ")
+        memberID = str(base64.b64decode(memberID))
+        memberID = memberID.split("b'")[1]
+        memberID = memberID.split("'")[0]
+        print("Welcome, " + memberID)
+        print("Your membership has been validated.")
+        print("Are you sure? Your current rewards will be erased. (y/n)")
+        command = input("> ")
+        if command == "y":
+            with open("resources/cache.txt", "wb") as rewards:
+                rewards.write(bytes("0".encode('utf-8')))
+                print("You may proceed to collect rewards.")
+        else:
+            print("Process aborted.")
+    elif command == "6":
+        try:
+            with open("resources/cache.txt", "rb") as cache:
+                reward_count = str(cache.read())
+                reward_count = reward_count.split("b'")[1]
+                reward_count = reward_count.split("'")[0]
+                reward_count = int(reward_count)
+                print("Rewards: " + str(reward_count))
+        except:
+            print("Join GRU Members to view your rewards!")
     else:
         askForCommand()
 
