@@ -9,6 +9,7 @@
             console.log(identifier)
             console.log(query2)
             if (identifier == "u") {
+                document.write("<head><title>" + query2 + "</title></head>")
                 document.write("<div><h3>" + query2 + "</h3>")
                 const gravatarUrl = `https://grugraphics.vercel.app/cdn/profiles/` + query2 +  `.png`;
                 document.write("<img src='" + gravatarUrl + "' width=50 height=50></div>")
