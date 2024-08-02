@@ -32,6 +32,20 @@ def convert_png_to_gru(png_path, gru_path):
         for r, g, b in pixel_data:
             file.write(struct.pack('3B', r, g, b))
 
+    try:
+        with open("resources/cache.txt", "rb") as cache:
+            reward_count = str(cache.read())
+            reward_count = reward_count.split("b'")[1]
+            reward_count = reward_count.split("'")[0]
+            reward_count = int(reward_count)
+            new_reward_count = reward_count + 1
+            new_reward_count = str(new_reward_count)
+            print("Rewards: " + str(new_reward_count))
+        with open("resources/cache.txt", "wb") as cache:
+            cache.write(bytes(new_reward_count.encode('utf-8')))
+    except:
+        print("Join GRU Members to view your rewards!")
+
 
 
 if __name__ == "__main__":
