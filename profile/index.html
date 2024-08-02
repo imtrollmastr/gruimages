@@ -1,15 +1,5 @@
 <html>
     <head>
-        <style>
-            img {
-                float: right;
-                margin-right: 10px;
-            }
-
-            p {
-                overflow: hidden;
-            }
-        </style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
         <script>
             var query = window.location.search
@@ -19,9 +9,9 @@
             console.log(identifier)
             console.log(query2)
             if (identifier == "user") {
-                document.write("<p>" + query2 + "</p>")
+                document.write("<div><h3>" + query2 + "</h3>")
                 const gravatarUrl = `https://grugraphics.vercel.app/cdn/profiles/` + query2 +  `.png`;
-                document.write("<img src='" + gravatarUrl + "' width=50 height=50>")
+                document.write("<img src='" + gravatarUrl + "' width=50 height=50></div>")
             }
         </script>
     </head>
