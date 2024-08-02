@@ -15,6 +15,7 @@ function upload() {
             var identifier = query1.split("=")[0]
             var query2 = query1.split(identifier + "=")[1]
             if (identifier == "u") {
+                document.getElementById("u").innerHTML = "User selected: " + query2
                 document.write("<head><title>" + query2 + "</title></head>")
                 document.write("<div><h3>" + query2 + "</h3>")
                 const gravatarUrl = success
