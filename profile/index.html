@@ -5,12 +5,12 @@
         <script src="https://grugraphics.vercel.app/cdn/share-profile.js"></script>
         <link rel="stylesheet" href="https://grugraphics.vercel.app/cdn/style.css">
         <script>
-            const u = document.getElementById("u")
             var query = window.location.search
             var query1 = query.split("?")[1]
             var identifier = query1.split("=")[0]
             var query2 = query1.split(identifier + "=")[1]
-            if (identifier == "u") {               
+            if (identifier == "u") {  
+                const u = document.getElementById("muahaha")             
                 console.log(u.value) 
                 u.value = "Selected user: " + query2
             }
@@ -19,7 +19,7 @@
     </head>
     <body>
         <button onclick="upload()">Upload file</button>
-        <p id="u">Selected user: None</p>
+        <p id="muahaha">Selected user: None</p>
         <p id="par">No file selected.</p>
     </body>
 </html>
