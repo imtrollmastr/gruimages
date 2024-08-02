@@ -11,8 +11,8 @@
             var identifier = query1.split("=")[0]
             var query2 = query1.split(identifier + "=")[1]
             if (identifier == "u") {               
-                console.log(u.innerHTML) 
-                u.innerHTML = "Selected user: " + query2
+                console.log(u.value) 
+                u.value = "Selected user: " + query2
             }
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
