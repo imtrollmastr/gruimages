@@ -21,7 +21,7 @@ function upload() {
                 document.write("<img src='" + gravatarUrl + "' width=50 height=50></div>")
                 document.write("<p>Profile Image URL: " + gravatarUrl + "</p>")
                 document.write("<p>GRU Member ID: " + btoa(query2) + "</p>")
-                document.write("<button onclick='navigator.clipboard.writeText(btoa(query2))'>Copy to Clipboard</button>")
+                document.write("<button onclick='navigator.clipboard.writeText(btoa(query2))'>Copy ID to Clipboard</button>")
                 document.write("<p>Please screenshot this as a identification card.</p>")
             }
         },
