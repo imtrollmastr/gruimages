@@ -10,8 +10,8 @@
             var identifier = query1.split("=")[0]
             var query2 = query1.split(identifier + "=")[1]
             if (identifier == "u") {  
-                document.write("<button onclick='upload()'>Upload file</button>")
                 document.write("<p id='muahaha'>Selected user: None</p>")
+                document.write("<button onclick='upload()'>Upload file</button>")
                 document.write("<p id='par'>No file selected.</p>")
                 const u = document.getElementById("muahaha")             
                 u.innerHTML = "Selected username: " + query2
