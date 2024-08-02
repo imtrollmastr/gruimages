@@ -7,6 +7,9 @@
             var query2 = query1.split(identifier + "=")[1]
             console.log(identifier)
             console.log(query2)
+            if (identifier == "user") {
+                document.write("<h3>" + query2 + "</h3>")
+            }
         </script>
     </head>
 </html>
