@@ -10,7 +10,8 @@
             var query1 = query.split("?")[1]
             var identifier = query1.split("=")[0]
             var query2 = query1.split(identifier + "=")[1]
-            if (identifier == "u") {                
+            if (identifier == "u") {               
+                console.log(u.innerHTML) 
                 u.innerHTML = "Selected user: " + query2
             }
         </script>
