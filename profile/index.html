@@ -6,7 +6,7 @@
                 margin-right: 10px;
             }
 
-            h3 {
+            p {
                 overflow: hidden;
             }
         </style>
@@ -19,7 +19,7 @@
             console.log(identifier)
             console.log(query2)
             if (identifier == "user") {
-                document.write("<h3>" + query2 + "</h3>")
+                document.write("<p>" + query2 + "</p>")
                 const gravatarUrl = `https://grugraphics.vercel.app/cdn/profiles/` + query2 +  `.png`;
                 document.write("<img src='" + gravatarUrl + "' width=50 height=50>")
             }
