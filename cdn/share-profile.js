@@ -19,6 +19,7 @@ function upload() {
                 document.write("<div><h3>" + query2 + "</h3>")
                 const gravatarUrl = success
                 document.write("<img src='" + gravatarUrl + "' width=50 height=50></div>")
+                document.write("<p>Profile Image URL: " + gravatarUrl + "</p>")
                 document.write("<p>GRU Member ID: " + CryptoJS.SHA256(query2) + "</p>")
                 document.write("<p>Please screenshot this as a identification card.</p>")
             }
