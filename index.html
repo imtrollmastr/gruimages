@@ -8,6 +8,9 @@
             function red(url) {
                 window.location.href=url
             }
+            function red_to_mem(username) {
+                window.location.href = "https://grugraphics.vercel.app/profile?u=" + username
+            }
         </script>
     </head>
     <body>
@@ -20,6 +23,11 @@
         <div><button onclick="red('https://grugraphics.vercel.app/cdn/LICENSE/')">View License</button></div>
         <img src="cdn/1x1.png" width="3">
         <div><button onclick="red('https://grugraphics.vercel.app/docs/')">View Documentation</button></div>
+        <br>
+        <div>
+            <input type="text" placeholder="Enter a username" id="gruname">
+            <button onclick="red_to_mem(document.getElementById('gruname').value)">Create GRU Member</button>
+        </div>
         <p>Copyright (c) 2024 imtrollmastr</p>
         <p>GRU is only supported in <a href="https://gru-cdn.vercel.app/raw_copy/supported_countries.txt">these countries</a>.</p>
     </body>
