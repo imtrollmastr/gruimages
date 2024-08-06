@@ -1,11 +1,18 @@
+# main.py (GRU Graphics Panel)
+# Made by Eddie Stockton (aka "imtrollmastr")
+
+# Import required libraries
 from PIL import Image
 import struct
 import sys
 import os
 import base64
 
+# Set up variables
 start_path = ''
 end_path = ''
+
+# Main convert function
 def convert_png_to_gru(png_path, gru_path):
     os.system("mkdir " + "images/" + gru_path)
 
@@ -34,6 +41,7 @@ def convert_png_to_gru(png_path, gru_path):
 
     try:
         with open("resources/cache.txt", "rb") as cache:
+            # Renew membership and add point
             reward_count = str(cache.read())
             reward_count = reward_count.split("b'")[1]
             reward_count = reward_count.split("'")[0]
@@ -46,8 +54,7 @@ def convert_png_to_gru(png_path, gru_path):
     except:
         print("Join GRU Members to view your rewards!")
 
-
-
+# Initiate GRU Graphics
 if __name__ == "__main__":
     if len(sys.argv) < 3:
         print("error: bad arguments")

@@ -1,6 +1,15 @@
+# main.py (GRU Graphics Panel)
+# Made by Eddie Stockton (aka "imtrollmastr")
+
+# Import required libraries
+import os
 import subprocess
 import requests
 import webbrowser
+import base64
+import getpass
+
+# Check for security and internet connection
 def check_internet_connection():
    try:
       subprocess.check_output(["ping", "-c", "1", "8.8.8.8"])
@@ -39,42 +48,43 @@ if check_internet_connection():
 else:
    print("Internet is not connected.")
 
+# Show loaded message
 print("GRU Graphics Panel has successfully loaded.")
 
-import os
-import sys
-import base64
-
-with open("config/username.config", "rb") as username_file:
-    username = str(username_file.read())
-    username = str.split(username, "b'")[1]
-    username = str.split(username, "'")[0]
-print("Welcome, " + username + ".")
+# Start command entry panel
+print("Welcome, " + getpass.getuser() + ".")
 print("1) Convert .png to .gru")
 print("2) Display .gru image")
 print("3) Convert .gru to .png")
 print("4) Join GRU Members")
 print("5) Enter GRU Member ID")
 print("6) View Rewards")
+
+# Command function
 def askForCommand():
     command = input("> ")
     if command == "1":
+        # Run convert.py
         print("Enter file you want to convert:")
         inputFile = input("> ")
         print("Enter the output file name:")
         outputFile = input("> ")
         os.system("python3 resources/convert.py " + inputFile + " " + outputFile)
     elif command == "2":
+        # Run render.py
         print("Enter .gru file that you want to render:")
         renderFile = input("> ")
         os.system("python3 resources/render.py " + renderFile)
     elif command == "3":
+        # Show unsupported message
         print("We do not support decompiling yet.")
     elif command == "4":
+        # Redirect to GRU Membership Registration
         print("Enter a username: ")
         command = input("> ")
         webbrowser.open_new_tab("https://grugraphics.vercel.app/profile?u=" + command)
     elif command == "5":
+        # Decode GRU Membership ID
         print("Enter your GRU Member ID:")
         memberID = input("> ")
         memberID = str(base64.b64decode(memberID))
@@ -84,6 +94,7 @@ def askForCommand():
         print("Your membership has been validated.")
         print("Are you sure? Your current rewards will be erased. (y/n)")
         command = input("> ")
+        # Create rewards file
         if command == "y":
             with open("resources/cache.txt", "wb") as rewards:
                 rewards.write(bytes("0".encode('utf-8')))
@@ -92,6 +103,7 @@ def askForCommand():
             print("Process aborted.")
     elif command == "6":
         try:
+            # Find cache file and read
             with open("resources/cache.txt", "rb") as cache:
                 reward_count = str(cache.read())
                 reward_count = reward_count.split("b'")[1]
@@ -103,4 +115,5 @@ def askForCommand():
     else:
         askForCommand()
 
+# Run command function
 askForCommand()

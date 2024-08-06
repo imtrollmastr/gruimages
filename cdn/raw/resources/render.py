@@ -1,10 +1,14 @@
+# render.py (GRU Graphics Panel)
+# Made by Eddie Stockton (aka "imtrollmastr")
+
+# Import required libraries
 import pygame
 import sys
 from PIL import Image
 import struct
-import os
 import base64
 
+# Create pixel class
 class Pixel:
     def __init__(self, r, g, b):
         self.r = r
@@ -17,6 +21,7 @@ class Pixel:
     def __str__(self):
         return f"({self.r}, {self.g}, {self.b})"
 
+# Main loading function
 def load_gru_image(gru_path):
         with open("images/" + gru_path + "/" + gru_path + "_info.txt", "rb") as info:
             cinfo = info.read()
@@ -57,6 +62,7 @@ def load_gru_image(gru_path):
             else:
                 print("Incorrect password.")
 
+# Warn if arguments are unavailable
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: python test2.py <gru_file>")
@@ -72,7 +78,7 @@ if __name__ == "__main__":
         print(f"Error loading gru image: {e}")
         sys.exit(1)
 
-
+    # Initiate GRU Graphics
     pygame.init()
     window = pygame.display.set_mode((width, height))
     pygame.display.set_caption('GRU Image Viewer')
