@@ -100,7 +100,7 @@ def askForCommand():
             with open("resources/cache.txt", "wb") as rewards:
                 rewards.write(bytes("0".encode('utf-8')))
                 print("You may proceed to collect rewards.")
-                
+
         else:
             print("Process aborted.")
     elif command == "6":
