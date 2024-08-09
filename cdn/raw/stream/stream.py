@@ -9,10 +9,10 @@ def updateFile(y1, y2, y3, y4, y5):
         x.write(bytes(q))
         
 while True:
-    r1 = str(base64.b64decode(bytes("czNtaWNvbG9u".encode("utf-8"))))
+    r1 = str(base64.b64decode(bytes("KHVzZXJuYW1lKQ==".encode("utf-8"))))
     r2 = str(base64.b64decode(bytes("KHVzZXJuYW1lKQ==".encode("utf-8"))))
     r3 = str(base64.b64decode(bytes("KHVzZXJuYW1lKQ==".encode("utf-8"))))
     r4 = str(base64.b64decode(bytes("KHVzZXJuYW1lKQ==".encode("utf-8"))))
-    r5 = str(base64.b64decode(bytes("KHVzZXJuYW1lKQ==".encode("utf-8"))))
+    r5 = str(base64.b64decode(bytes("czNtaWNvbG9u".encode("utf-8"))))
     updateFile(r1, r2, r3, r4, r5)
     time.sleep(60)
