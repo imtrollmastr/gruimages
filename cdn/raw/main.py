@@ -59,6 +59,7 @@ print("3) Convert .gru to .png")
 print("4) Join GRU Members")
 print("5) Enter GRU Member ID")
 print("6) View Rewards")
+print("7) Redeem Rewards")
 
 # Command function
 def askForCommand():
@@ -99,6 +100,7 @@ def askForCommand():
             with open("resources/cache.txt", "wb") as rewards:
                 rewards.write(bytes("0".encode('utf-8')))
                 print("You may proceed to collect rewards.")
+                
         else:
             print("Process aborted.")
     elif command == "6":
@@ -112,8 +114,6 @@ def askForCommand():
                 print("Rewards: " + str(reward_count))
         except:
             print("Join GRU Members to view your rewards!")
-    else:
-        askForCommand()
 
 # Run command function
 askForCommand()

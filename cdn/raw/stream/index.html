@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script>
+            function sleep(milliseconds) {
+                var start = new Date().getTime();
+                for (var i = 0; i < 1e7; i++) {
+                    if ((new Date().getTime() - start) > milliseconds){
+                        break;
+                    }
+                }
+            }
+
+            sleep(2000)
+            window.location.href="https://grugraphics.vercel.app/stream/"
+        </script>
+    </head>
+    <style>
+        body {
+            background-color: black;
+        }
+        p {
+            color: white;
+        }
+    </style>
+    <body>
+        <p>1.1.1.1 joined as a GRU member!</p>
+    </body>
+</html>
