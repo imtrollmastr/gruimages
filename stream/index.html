@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script>
+            window.location.href=""
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
+            var query = window.location.search
+            var query2 = query.split("?")[1]
+            var query3 = query2.split("=")
+            if (query3[0] == "q") {
+                if (query3[1] == "true") {
+
+                }
+                else {
+                    window.location.href="https://youtube.com/"
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <p>Send your unique code to grustreaming@protonmail.com.</p>
+        <p>This livestream updates every 24 hours.</p>
+        <br>
+        <p>(username) has joined as a GRU member.</p>
+    </body>
+</html>
