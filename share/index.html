@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Share | GRU Graphics</title>
+    <script src="https://js.bytescale.com/upload-widget/v4"></script>
+    <script src="https://axorax.github.io/urlmskr/lib.js"></script>
+    <script src="https://grugraphics.vercel.app/cdn/share.js"></script>
+    <link rel="stylesheet" href="https://grugraphics.vercel.app/cdn/style.css">
+  </head>
+  <body>
+    <h3>GRU Sharing Platform</h3>
+    <section>
+        <button onclick="upload()">Upload a file</button>
+        <p id="par">No file selected.</p>
+    </section>
+    <p>Select a .gru file to get a link.</p>
+    <form>
+        <input type="url" id="postfile" required>
+        <button id="postbutton" onclick="getSocialLinks(document.getElementById('postfile').value)" type="submit">Post file</button>
+    </form>
+    <p>Copyright (c) 2024 imtrollmastr [v6.1.8-alpha]</p>
+  </body>
+</html>
